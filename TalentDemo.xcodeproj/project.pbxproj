@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E6CAFC651BF409890D22A10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC98C568043A4C588732F931 /* libPods.a */; };
+		A2422F8518C4AF5D00E70FD8 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = A2422F7F18C4AF5D00E70FD8 /* NSString+Extend.m */; };
+		A2422F8618C4AF5D00E70FD8 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2422F8218C4AF5D00E70FD8 /* ActivityView.m */; };
+		A2422F8718C4AF5D00E70FD8 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2422F8418C4AF5D00E70FD8 /* CoverView.m */; };
+		A2422F8B18C4C16200E70FD8 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2422F8A18C4C16200E70FD8 /* avatar@2x.png */; };
+		A245C41518C3452400495FFA /* TalentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A245C41418C3452400495FFA /* TalentCell.m */; };
+		A24BCBDD18C1F43900FA5F1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BCBDC18C1F43900FA5F1C /* Foundation.framework */; };
+		A24BCBDF18C1F43900FA5F1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BCBDE18C1F43900FA5F1C /* CoreGraphics.framework */; };
+		A24BCBE118C1F43900FA5F1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BCBE018C1F43900FA5F1C /* UIKit.framework */; };
+		A24BCBE718C1F43900FA5F1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A24BCBE518C1F43900FA5F1C /* InfoPlist.strings */; };
+		A24BCBE918C1F43900FA5F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BCBE818C1F43900FA5F1C /* main.m */; };
+		A24BCBED18C1F43900FA5F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BCBEC18C1F43900FA5F1C /* AppDelegate.m */; };
+		A24BCBEF18C1F43900FA5F1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A24BCBEE18C1F43900FA5F1C /* Images.xcassets */; };
+		A24BCBF618C1F43900FA5F1C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BCBF518C1F43900FA5F1C /* XCTest.framework */; };
+		A24BCBF718C1F43900FA5F1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BCBDC18C1F43900FA5F1C /* Foundation.framework */; };
+		A24BCBF818C1F43900FA5F1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24BCBE018C1F43900FA5F1C /* UIKit.framework */; };
+		A24BCC0018C1F43900FA5F1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A24BCBFE18C1F43900FA5F1C /* InfoPlist.strings */; };
+		A24BCC0218C1F43900FA5F1C /* TalentDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BCC0118C1F43900FA5F1C /* TalentDemoTests.m */; };
+		A24BCC1118C1F5FF00FA5F1C /* TalentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24BCC1018C1F5FF00FA5F1C /* TalentViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A24BCBF918C1F43900FA5F1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A24BCBD118C1F43900FA5F1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A24BCBD818C1F43900FA5F1C;
+			remoteInfo = TalentDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		119D20C977484B7BB89D37B2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A2422F7E18C4AF5D00E70FD8 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
+		A2422F7F18C4AF5D00E70FD8 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
+		A2422F8118C4AF5D00E70FD8 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		A2422F8218C4AF5D00E70FD8 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
+		A2422F8318C4AF5D00E70FD8 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
+		A2422F8418C4AF5D00E70FD8 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
+		A2422F8818C4B02400E70FD8 /* Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extend.h; sourceTree = "<group>"; };
+		A2422F8A18C4C16200E70FD8 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		A245C41318C3452400495FFA /* TalentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalentCell.h; sourceTree = "<group>"; };
+		A245C41418C3452400495FFA /* TalentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalentCell.m; sourceTree = "<group>"; };
+		A24BCBD918C1F43900FA5F1C /* TalentDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalentDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24BCBDC18C1F43900FA5F1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A24BCBDE18C1F43900FA5F1C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A24BCBE018C1F43900FA5F1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A24BCBE418C1F43900FA5F1C /* TalentDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TalentDemo-Info.plist"; sourceTree = "<group>"; };
+		A24BCBE618C1F43900FA5F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A24BCBE818C1F43900FA5F1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A24BCBEA18C1F43900FA5F1C /* TalentDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TalentDemo-Prefix.pch"; sourceTree = "<group>"; };
+		A24BCBEB18C1F43900FA5F1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A24BCBEC18C1F43900FA5F1C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A24BCBEE18C1F43900FA5F1C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A24BCBF418C1F43900FA5F1C /* TalentDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TalentDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24BCBF518C1F43900FA5F1C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A24BCBFD18C1F43900FA5F1C /* TalentDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TalentDemoTests-Info.plist"; sourceTree = "<group>"; };
+		A24BCBFF18C1F43900FA5F1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A24BCC0118C1F43900FA5F1C /* TalentDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalentDemoTests.m; sourceTree = "<group>"; };
+		A24BCC0F18C1F5FF00FA5F1C /* TalentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalentViewController.h; sourceTree = "<group>"; };
+		A24BCC1018C1F5FF00FA5F1C /* TalentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalentViewController.m; sourceTree = "<group>"; };
+		A24BCC1218C1F7AB00FA5F1C /* UtilsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacro.h; sourceTree = "<group>"; };
+		DC98C568043A4C588732F931 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A24BCBD618C1F43900FA5F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BCBDF18C1F43900FA5F1C /* CoreGraphics.framework in Frameworks */,
+				A24BCBE118C1F43900FA5F1C /* UIKit.framework in Frameworks */,
+				A24BCBDD18C1F43900FA5F1C /* Foundation.framework in Frameworks */,
+				2E6CAFC651BF409890D22A10 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24BCBF118C1F43900FA5F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BCBF618C1F43900FA5F1C /* XCTest.framework in Frameworks */,
+				A24BCBF818C1F43900FA5F1C /* UIKit.framework in Frameworks */,
+				A24BCBF718C1F43900FA5F1C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2422F7C18C4AF5D00E70FD8 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				A2422F8818C4B02400E70FD8 /* Extend.h */,
+				A2422F7D18C4AF5D00E70FD8 /* Categary */,
+				A2422F8018C4AF5D00E70FD8 /* View */,
+			);
+			name = General;
+			path = TalentDemo/General;
+			sourceTree = SOURCE_ROOT;
+		};
+		A2422F7D18C4AF5D00E70FD8 /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				A2422F7E18C4AF5D00E70FD8 /* NSString+Extend.h */,
+				A2422F7F18C4AF5D00E70FD8 /* NSString+Extend.m */,
+			);
+			path = Categary;
+			sourceTree = "<group>";
+		};
+		A2422F8018C4AF5D00E70FD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2422F8118C4AF5D00E70FD8 /* ActivityView.h */,
+				A2422F8218C4AF5D00E70FD8 /* ActivityView.m */,
+				A2422F8318C4AF5D00E70FD8 /* CoverView.h */,
+				A2422F8418C4AF5D00E70FD8 /* CoverView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2422F8918C4C16200E70FD8 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A2422F8A18C4C16200E70FD8 /* avatar@2x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A24BCBD018C1F43900FA5F1C = {
+			isa = PBXGroup;
+			children = (
+				A24BCBE218C1F43900FA5F1C /* TalentDemo */,
+				A24BCBFB18C1F43900FA5F1C /* TalentDemoTests */,
+				A24BCBDB18C1F43900FA5F1C /* Frameworks */,
+				A24BCBDA18C1F43900FA5F1C /* Products */,
+				119D20C977484B7BB89D37B2 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A24BCBDA18C1F43900FA5F1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCBD918C1F43900FA5F1C /* TalentDemo.app */,
+				A24BCBF418C1F43900FA5F1C /* TalentDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A24BCBDB18C1F43900FA5F1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCBDC18C1F43900FA5F1C /* Foundation.framework */,
+				A24BCBDE18C1F43900FA5F1C /* CoreGraphics.framework */,
+				A24BCBE018C1F43900FA5F1C /* UIKit.framework */,
+				A24BCBF518C1F43900FA5F1C /* XCTest.framework */,
+				DC98C568043A4C588732F931 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A24BCBE218C1F43900FA5F1C /* TalentDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCBEB18C1F43900FA5F1C /* AppDelegate.h */,
+				A24BCBEC18C1F43900FA5F1C /* AppDelegate.m */,
+				A24BCC0E18C1F5B900FA5F1C /* Sections */,
+				A24BCC0C18C1F4F800FA5F1C /* Vendors */,
+				A2422F7C18C4AF5D00E70FD8 /* General */,
+				A24BCC0B18C1F4C300FA5F1C /* Macro */,
+				A24BCBEE18C1F43900FA5F1C /* Images.xcassets */,
+				A2422F8918C4C16200E70FD8 /* Image */,
+				A24BCBE318C1F43900FA5F1C /* Supporting Files */,
+			);
+			path = TalentDemo;
+			sourceTree = "<group>";
+		};
+		A24BCBE318C1F43900FA5F1C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCBE418C1F43900FA5F1C /* TalentDemo-Info.plist */,
+				A24BCBE518C1F43900FA5F1C /* InfoPlist.strings */,
+				A24BCBE818C1F43900FA5F1C /* main.m */,
+				A24BCBEA18C1F43900FA5F1C /* TalentDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A24BCBFB18C1F43900FA5F1C /* TalentDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCC0118C1F43900FA5F1C /* TalentDemoTests.m */,
+				A24BCBFC18C1F43900FA5F1C /* Supporting Files */,
+			);
+			path = TalentDemoTests;
+			sourceTree = "<group>";
+		};
+		A24BCBFC18C1F43900FA5F1C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCBFD18C1F43900FA5F1C /* TalentDemoTests-Info.plist */,
+				A24BCBFE18C1F43900FA5F1C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A24BCC0B18C1F4C300FA5F1C /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCC1218C1F7AB00FA5F1C /* UtilsMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		A24BCC0C18C1F4F800FA5F1C /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendors;
+			path = TalentDemo/Vendors;
+			sourceTree = SOURCE_ROOT;
+		};
+		A24BCC0E18C1F5B900FA5F1C /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				A24BCC0F18C1F5FF00FA5F1C /* TalentViewController.h */,
+				A24BCC1018C1F5FF00FA5F1C /* TalentViewController.m */,
+				A245C41318C3452400495FFA /* TalentCell.h */,
+				A245C41418C3452400495FFA /* TalentCell.m */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A24BCBD818C1F43900FA5F1C /* TalentDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A24BCC0518C1F43900FA5F1C /* Build configuration list for PBXNativeTarget "TalentDemo" */;
+			buildPhases = (
+				604D5A22DF8E47229615B2E4 /* Check Pods Manifest.lock */,
+				A24BCBD518C1F43900FA5F1C /* Sources */,
+				A24BCBD618C1F43900FA5F1C /* Frameworks */,
+				A24BCBD718C1F43900FA5F1C /* Resources */,
+				E20AAD65325E4E1FA9419D9B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TalentDemo;
+			productName = TalentDemo;
+			productReference = A24BCBD918C1F43900FA5F1C /* TalentDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A24BCBF318C1F43900FA5F1C /* TalentDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A24BCC0818C1F43900FA5F1C /* Build configuration list for PBXNativeTarget "TalentDemoTests" */;
+			buildPhases = (
+				A24BCBF018C1F43900FA5F1C /* Sources */,
+				A24BCBF118C1F43900FA5F1C /* Frameworks */,
+				A24BCBF218C1F43900FA5F1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A24BCBFA18C1F43900FA5F1C /* PBXTargetDependency */,
+			);
+			name = TalentDemoTests;
+			productName = TalentDemoTests;
+			productReference = A24BCBF418C1F43900FA5F1C /* TalentDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A24BCBD118C1F43900FA5F1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = shenjiaxiong;
+				TargetAttributes = {
+					A24BCBF318C1F43900FA5F1C = {
+						TestTargetID = A24BCBD818C1F43900FA5F1C;
+					};
+				};
+			};
+			buildConfigurationList = A24BCBD418C1F43900FA5F1C /* Build configuration list for PBXProject "TalentDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A24BCBD018C1F43900FA5F1C;
+			productRefGroup = A24BCBDA18C1F43900FA5F1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A24BCBD818C1F43900FA5F1C /* TalentDemo */,
+				A24BCBF318C1F43900FA5F1C /* TalentDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A24BCBD718C1F43900FA5F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2422F8B18C4C16200E70FD8 /* avatar@2x.png in Resources */,
+				A24BCBE718C1F43900FA5F1C /* InfoPlist.strings in Resources */,
+				A24BCBEF18C1F43900FA5F1C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24BCBF218C1F43900FA5F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BCC0018C1F43900FA5F1C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		604D5A22DF8E47229615B2E4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E20AAD65325E4E1FA9419D9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A24BCBD518C1F43900FA5F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2422F8718C4AF5D00E70FD8 /* CoverView.m in Sources */,
+				A24BCBED18C1F43900FA5F1C /* AppDelegate.m in Sources */,
+				A24BCC1118C1F5FF00FA5F1C /* TalentViewController.m in Sources */,
+				A24BCBE918C1F43900FA5F1C /* main.m in Sources */,
+				A245C41518C3452400495FFA /* TalentCell.m in Sources */,
+				A2422F8618C4AF5D00E70FD8 /* ActivityView.m in Sources */,
+				A2422F8518C4AF5D00E70FD8 /* NSString+Extend.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A24BCBF018C1F43900FA5F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24BCC0218C1F43900FA5F1C /* TalentDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A24BCBFA18C1F43900FA5F1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A24BCBD818C1F43900FA5F1C /* TalentDemo */;
+			targetProxy = A24BCBF918C1F43900FA5F1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A24BCBE518C1F43900FA5F1C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A24BCBE618C1F43900FA5F1C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A24BCBFE18C1F43900FA5F1C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A24BCBFF18C1F43900FA5F1C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A24BCC0318C1F43900FA5F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A24BCC0418C1F43900FA5F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A24BCC0618C1F43900FA5F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119D20C977484B7BB89D37B2 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TalentDemo/TalentDemo-Prefix.pch";
+				INFOPLIST_FILE = "TalentDemo/TalentDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A24BCC0718C1F43900FA5F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119D20C977484B7BB89D37B2 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TalentDemo/TalentDemo-Prefix.pch";
+				INFOPLIST_FILE = "TalentDemo/TalentDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A24BCC0918C1F43900FA5F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TalentDemo.app/TalentDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TalentDemo/TalentDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TalentDemoTests/TalentDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A24BCC0A18C1F43900FA5F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TalentDemo.app/TalentDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TalentDemo/TalentDemo-Prefix.pch";
+				INFOPLIST_FILE = "TalentDemoTests/TalentDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A24BCBD418C1F43900FA5F1C /* Build configuration list for PBXProject "TalentDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24BCC0318C1F43900FA5F1C /* Debug */,
+				A24BCC0418C1F43900FA5F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A24BCC0518C1F43900FA5F1C /* Build configuration list for PBXNativeTarget "TalentDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24BCC0618C1F43900FA5F1C /* Debug */,
+				A24BCC0718C1F43900FA5F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A24BCC0818C1F43900FA5F1C /* Build configuration list for PBXNativeTarget "TalentDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A24BCC0918C1F43900FA5F1C /* Debug */,
+				A24BCC0A18C1F43900FA5F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A24BCBD118C1F43900FA5F1C /* Project object */;
+}
