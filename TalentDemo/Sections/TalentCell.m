@@ -24,18 +24,21 @@
         
         for (int i = 0; i < 2; i++)
         {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+            UILabel *label = [[UILabel alloc] init];
             label.backgroundColor = [UIColor clearColor];
             label.font = [UIFont systemFontOfSize:18];
+            label.textColor = [UIColor blackColor];
             switch (i) {
                     case 0:
                 {
+                    label.frame = CGRectMake(55, 20, 80, 20);
                     label.textColor = RGB(83, 177, 162);
                     self.name = label;
                 }
                     break;
                     case 1:
                 {
+                    label.frame = CGRectMake(155, 20, 140, 20);
                     self.tripName = label;
                 }
                     break;
@@ -47,12 +50,13 @@
         }
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectZero;
+        button.frame = CGRectMake(55, 360, 250, 35);
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.hiddenActivity = button;
         [self.contentView addSubview:button];
        
         
-        _activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35, 250, 135)];
+        _activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 360, 250, 135)];
         [self.contentView addSubview:_activityView];
     }
     return self;
@@ -64,8 +68,7 @@
     if (!isShow)
     {
         _showAll = NO;
-        NSDictionary *activityInfo = [activities objectAtIndex:0];
-        [self addActivityViews:activityInfo];
+        [self addActivityViews:activities withIndex:0];
     }
     else
     {
@@ -76,19 +79,29 @@
         }
         for (int i = 0; i < [activities count]; i++)
         {
-            NSDictionary *activityInfo = [activities objectAtIndex:0];
-            [self addActivityViews:activityInfo];
+            [self addActivityViews:activities withIndex:i];
+
         }
     }
 }
 
--(void)addActivityViews:(NSDictionary *)activityInfo
+-(void)addActivityViews:(NSArray *)activities withIndex:(NSInteger)index
 {
+    NSDictionary *activityInfo = [activities objectAtIndex:index];
+
     NSString *content = [activityInfo objectForKey:@"content"];
-    
     CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:16] withLineSpacing:0];
+    float lastActivityHeight = 0;
+    if (index != 0)
+    {
+        NSDictionary *lastActivityInfo = [activities objectAtIndex:index];
+        NSString *lastContent = [lastActivityInfo objectForKey:@"content"];
+        CGSize lastSize = [lastContent boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:16] withLineSpacing:0];
+
+        lastActivityHeight= lastSize.height == 0 ? 205+5:205+5+size.height+5;
+    }
     float height = size.height == 0 ? 205:205+5+size.height;
-    ActivityView *activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35, 250, height)withInfo:activityInfo];
+    ActivityView *activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+lastActivityHeight, 250, height)withInfo:activityInfo];
     [self.contentView addSubview:activityView];
 
 }
