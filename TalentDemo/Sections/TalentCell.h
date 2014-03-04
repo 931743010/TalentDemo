@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 @class ActivityView;
+
+@protocol ActivityDelegate
+
+@optional
+-(void)showAll:(NSInteger)row;
+-(void)hiddenOthers;
+
+@end
 @interface TalentCell : UITableViewCell
 @property (nonatomic,strong) UIImageView *avatar; //头像
 @property (nonatomic,strong) UILabel *name; //名字
@@ -16,8 +24,11 @@
 
 @property (nonatomic,strong) UIButton *hiddenActivity;//隐藏动态
 @property (nonatomic) BOOL showAll;
+@property (nonatomic) NSInteger activitiesNum;
 
+@property (nonatomic,weak)id<ActivityDelegate> activityDelegate;
 
--(void)addActivityViews:(NSArray *)activities showAll:(BOOL)isShow;
+-(void)fillActivityViews:(NSArray *)activities showAll:(BOOL)isShow;
+-(void)fillTalentCell:(NSArray *)activities;
 
 @end

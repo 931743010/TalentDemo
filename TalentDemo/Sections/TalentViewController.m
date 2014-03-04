@@ -9,13 +9,16 @@
 #import "TalentViewController.h"
 #import "UtilsMacro.h"
 #import "TalentCell.h"
-@interface TalentViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "Extend.h"
+@interface TalentViewController ()<UITableViewDataSource,UITableViewDelegate,ActivityDelegate>
 {
     UITableView *_talentTable;
     NSArray *_names;
     NSArray *_tripNames;
     NSArray *_contents;
     NSArray *_info;
+    
+    BOOL isViewDidAppear;//视图出现则table已经构造好了
 }
 @end
 
@@ -38,11 +41,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    isViewDidAppear = YES;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = RGB(250, 246, 231);
     self.navigationItem.title = @"达人";
     
     _contents = [[NSArray alloc] initWithObjects:@"这雨，出生于天，死于大地。中间的过程，便是人生。我之所以看这雨水，不看天，不看地，看的也不是雨。而是这雨的一生……这便是生与死",\
@@ -117,7 +124,7 @@
                        @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -134,7 +141,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -204,7 +211,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -265,7 +272,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -371,7 +378,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -388,7 +395,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -405,7 +412,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -422,7 +429,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -439,7 +446,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -456,7 +463,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -473,7 +480,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -490,7 +497,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -507,7 +514,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -524,7 +531,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -541,7 +548,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -558,7 +565,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -575,7 +582,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -592,7 +599,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -609,7 +616,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -626,7 +633,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -643,7 +650,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -660,7 +667,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -677,7 +684,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -694,7 +701,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -711,7 +718,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -728,7 +735,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -745,7 +752,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -762,7 +769,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -779,7 +786,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -796,7 +803,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -813,7 +820,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -830,7 +837,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -847,7 +854,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -864,7 +871,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -881,7 +888,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -898,7 +905,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -915,7 +922,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -932,7 +939,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -949,7 +956,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -966,7 +973,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -983,7 +990,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -1000,7 +1007,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -1017,7 +1024,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -1034,7 +1041,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -1051,7 +1058,7 @@
                          @{
                            @"name":@"名字",
                            @"tripName":@"旅程",
-                           @"activitiesNum":@"2",
+                           @"activitiesNum":@"1",
                            @"avatar":@"头像",
                            @"activities":@[
                                    @{
@@ -1078,14 +1085,61 @@
                                                style:UITableViewStylePlain];
     _talentTable.delegate = self;
     _talentTable.dataSource = self;
+    _talentTable.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_talentTable];
 }
+#pragma mark -
+#pragma mark ActivityDelegate
+-(void)showAll:(NSInteger)row
+{
 
+    [_talentTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [_talentTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+-(void)hiddenOthers
+{
+    [_talentTable reloadData];
+}
 #pragma mark -
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 400;
+    NSInteger row = [indexPath row];
+    NSDictionary *tripInfo = [_info objectAtIndex:row];
+    float activityViewHeight = 0.0;
+    float hiddenBarHeight = 0.0;
+    NSDictionary *activityInfo ;
+    NSInteger endCondition = 1;
+     ;
+    if (isViewDidAppear)
+    {
+      TalentCell *cell  = (TalentCell *)[tableView cellForRowAtIndexPath:indexPath];
+        endCondition = cell.showAll ? [tripInfo[@"activities"] count]:1;
+    }
+
+    float contentHeight = 0;
+    for (int i =0 ; i < endCondition; i++)
+    {
+        activityInfo = [tripInfo[@"activities"] objectAtIndex:0];
+        
+        NSString *content = [activityInfo objectForKey:@"content"];
+        
+        if (content.length > 0)
+        {
+            CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
+            contentHeight = size.height+5;
+        }
+        activityViewHeight += ((contentHeight == 0) ? 173 : 173 + contentHeight + 5);//动态的高
+
+    }
+    
+    NSInteger activitiesNum = [tripInfo[@"activitiesNum"] integerValue] ;
+    hiddenBarHeight = activitiesNum > 1 ? 40:0;
+    
+    //名字+动态+影藏条 + 底部预留间隔
+
+    float cellHeight = activityViewHeight + 35+ hiddenBarHeight+10;
+    return cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -1097,13 +1151,11 @@
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 50;
+    return [_info count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     static NSString *CellIdentifier = @"Cell";
     
     TalentCell *cell = (TalentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -1114,15 +1166,17 @@
         
     }
     NSInteger row =     [indexPath row];
+
+    cell.tag = row;
+    cell.activityDelegate = self;
     NSDictionary *tripInfo = [_info objectAtIndex:row];
     
     cell.name.text = [tripInfo objectForKey:@"name"];
     cell.tripName.text = @"在 旅程 中拍摄了照片";
     cell.avatar.image = [UIImage imageNamed:@"avatar.png"];
+    cell.activitiesNum = [tripInfo[@"activitiesNum"] integerValue];
     
-    [cell addActivityViews:[tripInfo objectForKey:@"activities"] showAll:NO];
-    
-    [cell.hiddenActivity setTitle:@"9条隐藏动态" forState:UIControlStateNormal];
+    [cell fillActivityViews:[tripInfo objectForKey:@"activities"] showAll:cell.showAll];
     return cell;
 }
 
