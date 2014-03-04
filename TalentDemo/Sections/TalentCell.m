@@ -17,6 +17,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _avatar = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 36, 36)];
         _avatar.layer.cornerRadius = 18;
         _avatar.layer.masksToBounds = YES;
@@ -26,19 +29,19 @@
         {
             UILabel *label = [[UILabel alloc] init];
             label.backgroundColor = [UIColor clearColor];
-            label.font = [UIFont systemFontOfSize:18];
+            label.font = [UIFont systemFontOfSize:16];
             label.textColor = [UIColor blackColor];
             switch (i) {
                     case 0:
                 {
-                    label.frame = CGRectMake(55, 20, 80, 20);
+                    label.frame = CGRectMake(55, 15, 80, 20);
                     label.textColor = RGB(83, 177, 162);
                     self.name = label;
                 }
                     break;
                     case 1:
                 {
-                    label.frame = CGRectMake(155, 20, 140, 20);
+                    label.frame = CGRectMake(135, 15, 170, 20);
                     self.tripName = label;
                 }
                     break;
@@ -84,24 +87,48 @@
         }
     }
 }
-
+-(void)fillActivityViews:(NSArray *)activities
+{
+    NSDictionary *activityInfo = activities[0];
+    
+    NSString *content = activityInfo[@"content"];
+    
+    float contentHeight = 0;
+    if (content.length > 0)
+    {
+        CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
+        contentHeight = size.height == 0 ? 173:173+size.height;
+    }
+    _activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35, 250, contentHeight)withInfo:activityInfo];
+    [self.contentView addSubview:_activityView];
+}
 -(void)addActivityViews:(NSArray *)activities withIndex:(NSInteger)index
 {
-    NSDictionary *activityInfo = [activities objectAtIndex:index];
+    NSDictionary *activityInfo = activities[index];
 
-    NSString *content = [activityInfo objectForKey:@"content"];
-    CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:16] withLineSpacing:0];
+    NSInteger subviewNum = [[self.contentView subviews] count];
     float lastActivityHeight = 0;
     if (index != 0)
     {
-        NSDictionary *lastActivityInfo = [activities objectAtIndex:index];
-        NSString *lastContent = [lastActivityInfo objectForKey:@"content"];
-        CGSize lastSize = [lastContent boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:16] withLineSpacing:0];
-
-        lastActivityHeight= lastSize.height == 0 ? 205+5:205+5+size.height+5;
+        NSDictionary *lastActivityInfo = activities[index];
+        NSString *lastContent = lastActivityInfo[@"content"];
+          float lastContentHeight = 0;
+        if (lastContent.length > 0) {
+            CGSize lastSize = [lastContent boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
+            lastContentHeight = lastSize.height;
+        }
+        
+        lastActivityHeight= lastContentHeight == 0 ? 173:173+lastContentHeight+5;
     }
-    float height = size.height == 0 ? 205:205+5+size.height;
-    ActivityView *activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+lastActivityHeight, 250, height)withInfo:activityInfo];
+    NSString *content = activityInfo[@"content"];
+    
+    float contentHeight = 0;
+    if (content.length > 0)
+    {
+        CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
+        contentHeight = size.height == 0 ? 173:173+size.height;
+    }
+    ActivityView *activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+lastActivityHeight, 250, contentHeight)withInfo:activityInfo];
     [self.contentView addSubview:activityView];
 
 }

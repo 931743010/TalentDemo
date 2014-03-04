@@ -42,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = RGB(249, 245, 231);
     self.navigationItem.title = @"达人";
     
     _contents = [[NSArray alloc] initWithObjects:@"这雨，出生于天，死于大地。中间的过程，便是人生。我之所以看这雨水，不看天，不看地，看的也不是雨。而是这雨的一生……这便是生与死",\
@@ -1078,6 +1078,7 @@
                                                style:UITableViewStylePlain];
     _talentTable.delegate = self;
     _talentTable.dataSource = self;
+    _talentTable.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_talentTable];
 }
 
@@ -1114,13 +1115,13 @@
         
     }
     NSInteger row =     [indexPath row];
-    NSDictionary *tripInfo = [_info objectAtIndex:row];
+    NSDictionary *tripInfo = _info[row];
     
-    cell.name.text = [tripInfo objectForKey:@"name"];
+    cell.name.text = tripInfo[@"name"];
     cell.tripName.text = @"在 旅程 中拍摄了照片";
-    cell.avatar.image = [UIImage imageNamed:@"avatar.png"];
+    cell.avatar.image = [UIImage imageNamed:@"avatar_placeholder.png"];
     
-    [cell addActivityViews:[tripInfo objectForKey:@"activities"] showAll:NO];
+    [cell addActivityViews:tripInfo[@"activities"] showAll:NO];
     
     [cell.hiddenActivity setTitle:@"9条隐藏动态" forState:UIControlStateNormal];
     return cell;

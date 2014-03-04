@@ -10,5 +10,7 @@
 
 @interface CoverView : UIView
 #define padding 0 //图片边距
+
+@property(nonatomic,strong)UIImageView *coverImage;
 - (id)initWithFrame:(CGRect)frame coverUrl:(NSString *)coverUrl;
 @end

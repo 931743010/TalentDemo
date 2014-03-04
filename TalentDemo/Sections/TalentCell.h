@@ -17,7 +17,7 @@
 @property (nonatomic,strong) UIButton *hiddenActivity;//隐藏动态
 @property (nonatomic) BOOL showAll;
 
-
+-(void)fillActivityViews:(NSArray *)activities;
 -(void)addActivityViews:(NSArray *)activities showAll:(BOOL)isShow;
 
 @end
