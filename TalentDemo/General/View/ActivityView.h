@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class  CoverView;
 @interface ActivityView : UIView
-- (id)initWithFrame:(CGRect)frame withInfo:(NSDictionary *)activityInfo;
 
+@property(nonatomic,strong) CoverView *coverView;//照片
+@property(nonatomic,strong) UILabel *content;//描述
+
+@property(nonatomic,strong)UIButton *time;//时间
+@property(nonatomic,strong)UIButton *location;//地理位置
+
+-(void)fillActivitiesWithInfo:(NSDictionary *)activityInfo withContentHeight:(NSInteger)contentHeight;
 @end
