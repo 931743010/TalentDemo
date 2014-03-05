@@ -13,7 +13,7 @@
 
 @optional
 -(void)showAll:(NSInteger)row;
--(void)hiddenOthers;
+-(void)hiddenOthers:(NSInteger)row;
 
 @end
 @interface TalentCell : UITableViewCell

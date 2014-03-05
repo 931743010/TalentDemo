@@ -10,6 +10,7 @@
 #import "UtilsMacro.h"
 #import "TalentCell.h"
 #import "Extend.h"
+#import "AppMacro.h"
 @interface TalentViewController ()<UITableViewDataSource,UITableViewDelegate,ActivityDelegate>
 {
     UITableView *_talentTable;
@@ -18,7 +19,6 @@
     NSArray *_contents;
     NSArray *_info;
     
-    BOOL isViewDidAppear;//视图出现则table已经构造好了
     NSMutableDictionary *_showAllDic;
 }
 @end
@@ -45,7 +45,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    isViewDidAppear = YES;
 }
 - (void)viewDidLoad
 {
@@ -1102,9 +1101,11 @@
     [_talentTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     [_talentTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
--(void)hiddenOthers
+-(void)hiddenOthers:(NSInteger)row
 {
-    [_talentTable reloadData];
+    [_showAllDic setObject:@NO forKey:[@(row) stringValue]];
+    [_talentTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [_talentTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 #pragma mark -
 #pragma mark UITableViewDelegate
@@ -1115,35 +1116,34 @@
     float activityViewHeight = 0.0;
     float hiddenBarHeight = 0.0;
     NSDictionary *activityInfo ;
-    NSInteger endCondition = 1;
-     ;
-    //if (isViewDidAppear)
-    //{
+   
     BOOL isShowAll = [[_showAllDic objectForKey:[@(row) stringValue]] boolValue];
-        endCondition = isShowAll ? [tripInfo[@"activities"] count]:1;
-    //}
+      NSInteger endCondition = isShowAll ? [tripInfo[@"activities"] count]:1;
+   
 
-    float contentHeight = 0;
+    
     for (int i =0 ; i < endCondition; i++)
     {
-        activityInfo = [tripInfo[@"activities"] objectAtIndex:0];
+        float contentHeight = 0;
+        activityInfo = [tripInfo[@"activities"] objectAtIndex:i];
         
         NSString *content = [activityInfo objectForKey:@"content"];
         
         if (content.length > 0)
         {
-            CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
+            CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:CONTENT_FONT withLineSpacing:0];
             contentHeight = size.height+5;
         }
-        activityViewHeight += ((contentHeight == 0) ? 173 : 173 + contentHeight + 5);//动态的高
+        float temp = (((contentHeight == 0) ? ACTIVITY_HEIGHT : (ACTIVITY_HEIGHT + contentHeight + 5)));//动态的高
+        activityViewHeight +=temp;
     }
 
     NSInteger activitiesNum = [tripInfo[@"activitiesNum"] integerValue] ;
-    hiddenBarHeight = activitiesNum > 1 ? 40:0;
+    hiddenBarHeight = activitiesNum > 1 ? 35:0;
     
-    //名字+动态+影藏条 + 底部预留间隔
+    //名字+动态+影藏条 + 底部预留间隔+黑条
 
-    float cellHeight = activityViewHeight + 35+ hiddenBarHeight+10;
+    float cellHeight = activityViewHeight + 35+ hiddenBarHeight+10+3;
     if (isShowAll)
     {
         cellHeight = cellHeight+10*(endCondition - 1);

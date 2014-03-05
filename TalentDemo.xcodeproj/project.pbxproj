@@ -185,6 +185,7 @@
 		DA7CC62818C5CA4D006115F6 /* like2_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like2_select@2x.png"; sourceTree = "<group>"; };
 		DA7CC62918C5CA4D006115F6 /* location_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_pin.png; sourceTree = "<group>"; };
 		DA7CC62A18C5CA4D006115F6 /* location_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_pin@2x.png"; sourceTree = "<group>"; };
+		DAB7C67418C7116A00D58C73 /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		DC98C568043A4C588732F931 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -391,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				A24BCC1218C1F7AB00FA5F1C /* UtilsMacro.h */,
+				DAB7C67418C7116A00D58C73 /* AppMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";

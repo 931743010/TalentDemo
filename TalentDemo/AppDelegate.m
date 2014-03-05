@@ -22,7 +22,196 @@
     self.window.rootViewController = nav;
     return YES;
 }
-
+/*
+#pragma mark -
+#pragma mark UI设置
+-(void)appearanceCustomization
+{
+    id appearance;
+    NSDictionary *dic = nil;
+    UIControlState stateNormal = UIControlStateNormal;
+    UIControlState stateSelected = UIControlStateSelected;
+    //UIStatusBar
+    
+    //UINavigationBar
+    appearance = [UINavigationBar appearance];
+    {
+        //导航条ios6 需要高44的背景图，iOS 7 需要高为 64的背景图
+        UIImage *img = [[UIImage imageNamed:@"bgNavBar.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:1];
+        [appearance setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
+        //        [appearance setBackgroundColor:ColorWithRGB(238, 77, 77)];
+        [appearance setTintColor:[UIColor whiteColor]];
+        if (systemNewerThan7){
+            [appearance setBarTintColor:ColorWithRGB(238, 77, 77)];
+        }
+        
+        dic = @{UITextAttributeTextColor: [UIColor whiteColor]};
+        
+        [appearance setTitleTextAttributes:dic];
+        
+        //        NSShadow *shadow = [[NSShadow alloc] init];
+        //        shadow.shadowColor = [UIColor clearColor];
+        dic = @{
+                UITextAttributeTextColor: [UIColor whiteColor]
+                ,UITextAttributeTextShadowColor: [UIColor clearColor]
+                ,UITextAttributeFont:[self SDFontWithFamilyName:_HeadlineFontNameNormal_ size:16.0f]
+                };
+        //        [shadow release];
+        [appearance setTitleTextAttributes:dic];
+    }
+    
+    //UIToolbar
+    appearance = [UIToolbar appearance];
+    {
+        //        if (systemOlderThan7) {
+        UIImage *img = [[UIImage imageNamed:@"bgNavBar.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:1];
+        [appearance setBackgroundImage:img forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+        
+        [appearance setBackgroundColor:[UIColor redColor]];
+        //        }
+    }
+    
+    //UIBarButtonItem
+    appearance = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil];
+    //[appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(-1000, 0) forBarMetrics:UIBarMetricsDefault];
+    {
+        [appearance setBackgroundImage:[UIImage imageNamed:@"nilImage.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault
+         ];
+        
+        dic = @{
+                UITextAttributeTextColor: [UIColor whiteColor]
+                ,UITextAttributeFont: [self SDFontWithFamilyName:@"Oriya Sangam MN" size:16.0f]
+                ,UITextAttributeTextShadowColor : [UIColor clearColor]
+                };
+        
+        [appearance setTitleTextAttributes:dic forState:UIControlStateNormal];
+        
+        if (systemOlderThan7) {
+            UIImage *img = [UIImage imageNamed:@"back_.png"];
+            UIImage *img0 = [img resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 0) resizingMode:UIImageResizingModeStretch];
+            UIImage *img1 = [[img imageWithGradientTintColor:[UIColor grayColor]] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 0) resizingMode:UIImageResizingModeStretch];
+            [appearance setBackButtonBackgroundImage:img0 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+            [appearance setBackButtonBackgroundImage:img1 forState:1 barMetrics:UIBarMetricsDefault];
+            [appearance setBackButtonBackgroundImage:img1 forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+        }
+        
+    }
+    
+    appearance = [UIBarButtonItem appearanceWhenContainedIn:[UIToolbar class], nil];
+    {
+        [appearance setBackgroundImage:[UIImage imageNamed:@"nilImage.png"]
+                              forState:UIControlStateNormal
+                            barMetrics:UIBarMetricsDefault
+         ];
+        
+        dic = @{
+                UITextAttributeTextColor: [UIColor whiteColor]
+                ,UITextAttributeFont: [self SDFontWithFamilyName:@"Oriya Sangam MN" size:16.0f]
+                ,UITextAttributeTextShadowColor : [UIColor clearColor]
+                };
+        
+        [appearance setTitleTextAttributes:dic forState:UIControlStateNormal];
+        
+        //        dic = @{
+        //                UITextAttributeTextColor: ColorWithRGB(210, 210, 210)
+        //                ,UITextAttributeFont: [self SDFontWithFamilyName:@"Oriya Sangam MN" size:16.0f]
+        //                ,UITextAttributeTextShadowColor : [UIColor clearColor]
+        //                };
+        //        [appearance setTitleTextAttributes:dic forState:1];
+        
+        if (systemOlderThan7) {
+            UIImage *img = [[UIImage imageNamed:@"btnNavBack.png"] stretchableImageWithLeftCapWidth:14 topCapHeight:0];
+            [appearance setBackButtonBackgroundImage:img forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+            [appearance setBackButtonBackgroundImage:img forState:1 barMetrics:UIBarMetricsDefault];
+            
+            //            [appearance setBackgroundColor:[UIColor blueColor]];
+            //            [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0) forBarMetrics:UIBarMetricsDefault];
+        }
+    }
+    
+    //UITabBar
+    appearance = [UITabBar appearance];
+    {
+        UIImage *img = [[UIImage imageNamed:@"bgBottomBar.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:1];
+        [appearance setBackgroundImage:img];
+        [appearance setBackgroundColor:ColorWithRGB(249, 249, 249)];
+    }
+    
+    //UITabBarItem
+    appearance = [UITabBarItem appearance];
+    {
+        UIFont *font = [self SDFontWithFamilyName:@"SinhalaSangamMN" size:10.0f];
+        
+        dic = @{
+                UITextAttributeTextColor:ColorWithRGB(172, 172, 172),
+                UITextAttributeFont:font
+                };
+        
+        [appearance setTitleTextAttributes:dic forState:UIControlStateNormal];
+        
+        dic = [NSDictionary dictionaryWithObjectsAndKeys:
+               ColorWithRGB(223, 61, 66),UITextAttributeTextColor,
+               font,UITextAttributeFont,
+               nil];
+        
+        [appearance setTitleTextAttributes:dic forState:UIControlStateHighlighted];
+        
+    }
+    
+    //UISegmentedControl
+    appearance = [UISegmentedControl appearance];
+    
+    if (systemOlderThan7) {
+        UIImage *segmentSelected;
+        UIImage *segmentUnselected;
+        UIImage *segmentSelectedUnselected;
+        UIImage *segUnselectedSelected;
+        UIImage *segmentUnselectedUnselected;
+        
+        segmentSelected     = [[UIImage imageNamed:@"bgSegment1.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+        segmentUnselected   = [[UIImage imageNamed:@"bgSegment0.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+        
+        segmentSelectedUnselected   = [UIImage imageNamed:@"bgSegmentDivider.png"];
+        segUnselectedSelected       = [UIImage imageNamed:@"bgSegmentDivider.png"];
+        segmentUnselectedUnselected = [UIImage imageNamed:@"bgSegmentDivider.png"];
+        
+        dic =@{
+               UITextAttributeTextColor: ColorWithRGB(238, 77, 77),
+               UITextAttributeFont:[self SDFontWithFamilyName:_SubTitleFontName_ size:13.0f]
+               };
+        
+        [appearance setTitleTextAttributes:dic forState:UIControlStateNormal];
+        
+        dic =@{
+               UITextAttributeTextColor: [UIColor whiteColor],
+               UITextAttributeFont:[self SDFontWithFamilyName:_SubTitleFontName_ size:13.0f]
+               };
+        [appearance setTitleTextAttributes:dic forState:UIControlStateHighlighted];
+        
+        [appearance setContentPositionAdjustment:UIOffsetMake(0, 3) forSegmentType:UISegmentedControlSegmentAny barMetrics:UIBarMetricsDefault];
+        
+        
+        [appearance setBackgroundImage:segmentUnselected forState:stateNormal barMetrics:UIBarMetricsDefault];
+        [appearance setBackgroundImage:segmentSelected forState:stateSelected barMetrics:UIBarMetricsDefault];
+        
+        [appearance setDividerImage:segmentUnselectedUnselected
+                forLeftSegmentState:stateNormal
+                  rightSegmentState:stateNormal
+                         barMetrics:UIBarMetricsDefault];
+        
+        [appearance setDividerImage:segmentSelectedUnselected
+                forLeftSegmentState:stateSelected
+                  rightSegmentState:stateNormal
+                         barMetrics:UIBarMetricsDefault];
+        
+        [appearance setDividerImage:segUnselectedSelected
+                forLeftSegmentState:stateNormal
+                  rightSegmentState:stateSelected
+                         barMetrics:UIBarMetricsDefault];
+        
+    }
+    
+}*/
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

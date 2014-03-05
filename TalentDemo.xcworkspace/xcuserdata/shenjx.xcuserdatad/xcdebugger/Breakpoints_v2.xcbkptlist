@@ -6,15 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentViewController.m"
-            timestampString = "415693221.855278"
+            timestampString = "415700642.698148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1101"
-            endingLineNumber = "1101"
+            startingLineNumber = "1100"
+            endingLineNumber = "1100"
             landmarkName = "-showAll:"
             landmarkType = "5">
          </BreakpointContent>
@@ -22,47 +22,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415696216.012507"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-fillTalentCell:withIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415696461.713505"
+            timestampString = "415704938.048872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "-fillActivityViews:showAll:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415696461.713505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-fillActivityViews:showAll:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentViewController.m"
-            timestampString = "415696709.648354"
+            timestampString = "415704434.371844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1176"
@@ -90,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentViewController.m"
-            timestampString = "415696709.648354"
+            timestampString = "415704434.371844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1172"
@@ -102,79 +70,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415696461.713505"
+            timestampString = "415704938.048872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-fillActivityViews:showAll:"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-fillTalentCell:withIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415696461.713505"
+            filePath = "TalentDemo/Sections/TalentViewController.m"
+            timestampString = "415704452.916882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-fillActivityViews:showAll:"
+            startingLineNumber = "1127"
+            endingLineNumber = "1127"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[TalentCell fillActivityViews:showAll:]"
+                  symbolName = "-[TalentViewController tableView:heightForRowAtIndexPath:]"
                   moduleName = "TalentDemo"
-                  urlString = "file:///Users/shenjx/Desktop/flowyears.com/TalentDemo/TalentDemo/Sections/TalentCell.m"
-                  timestampString = "415696709.66069"
+                  urlString = "file:///Users/shenjx/Desktop/flowyears.com/TalentDemo/TalentDemo/Sections/TalentViewController.m"
+                  timestampString = "415704487.789204"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "165"
-                  endingLineNumber = "165"
-                  offsetFromSymbolStart = "1376">
+                  startingLineNumber = "1127"
+                  endingLineNumber = "1127"
+                  offsetFromSymbolStart = "642">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[TalentCell fillActivityViews:showAll:]"
+                  symbolName = "-[TalentViewController tableView:heightForRowAtIndexPath:]"
                   moduleName = "TalentDemo"
-                  urlString = "file:///Users/shenjx/Desktop/flowyears.com/TalentDemo/TalentDemo/Sections/TalentCell.m"
-                  timestampString = "415696709.66105"
+                  urlString = "file:///Users/shenjx/Desktop/flowyears.com/TalentDemo/TalentDemo/Sections/TalentViewController.m"
+                  timestampString = "415704487.789587"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "165"
-                  endingLineNumber = "165"
-                  offsetFromSymbolStart = "1468">
+                  startingLineNumber = "1127"
+                  endingLineNumber = "1127"
+                  offsetFromSymbolStart = "668">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415696530.053366"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-fillTalentCell:withIndex:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

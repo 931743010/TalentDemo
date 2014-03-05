@@ -10,8 +10,11 @@
 #import "UtilsMacro.h"
 #import "ActivityView.h"
 #import "Extend.h"
+#import "AppMacro.h"
 @implementation TalentCell
-
+{
+    float activityHeightBeforeThis;//一个新动态之前动态高度总和
+}
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -32,7 +35,7 @@
         {
             UILabel *label = [[UILabel alloc] init];
             label.backgroundColor = [UIColor clearColor];
-            label.font = [UIFont systemFontOfSize:14];
+            label.font = NAME_FONT;
             label.textColor = [UIColor blackColor];
             switch (i) {
                     case 0:
@@ -58,7 +61,7 @@
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(55, 360, 250, 35);
-        [button.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        [button.titleLabel setFont:HIDDEN_BAR_FONT];
         [button setBackgroundColor:RGB(239, 239, 239)];
         [button setTitleColor:RGB(164, 164, 164) forState:UIControlStateNormal];
         [button addTarget:self action:@selector(hiddenActivityClick) forControlEvents:UIControlEventTouchUpInside];
@@ -80,7 +83,7 @@
     if (self.showAll)
     {
         self.showAll = NO;
-        [_activityDelegate hiddenOthers];
+        [_activityDelegate hiddenOthers:self.tag];
     }
     else
     {
@@ -94,8 +97,10 @@
     
     float contentHeight = [self fetchContentHeightWithActivityInfo:activityInfo];
     float activityViewHeight = [self fetchActivityHeightWithActivityInfo:activityInfo];
-    _activityView= [[ActivityView alloc] initWithFrame:CGRectZero];
-    [self.contentView addSubview:_activityView];
+    if (!_activityView) {
+        _activityView= [[ActivityView alloc] initWithFrame:CGRectZero];
+        [self.contentView addSubview:_activityView];
+    }
     self.activityView.frame = CGRectMake(55, 35, 250, activityViewHeight);
     [self.activityView fillActivitiesWithInfo:activityInfo withContentHeight:contentHeight];
   
@@ -106,22 +111,20 @@
     
     float contentHeight = [self fetchContentHeightWithActivityInfo:activityInfo];
     float activityViewHeight = [self fetchActivityHeightWithActivityInfo:activityInfo];
-    float lastActivityHeight=0.0;
-    if (index!=0) {
-         lastActivityHeight = [self fetchActivityHeightWithActivityInfo:[activities objectAtIndex:index-1]];
-        lastActivityHeight +=10;
-    }
-   
-    ActivityView *activityView = [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+lastActivityHeight, 250, activityViewHeight)];
+    
+    ActivityView *activityView = [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+activityHeightBeforeThis, 250, activityViewHeight)];
+    
     [self.contentView addSubview:activityView];
     [activityView fillActivitiesWithInfo:activityInfo withContentHeight:contentHeight];
+    activityHeightBeforeThis += activityViewHeight+10;//上一个与下一个之间需要间隙10
+
    
 }
 -(float)fetchActivityHeightWithActivityInfo:(NSDictionary *)activityInfo
 {
     float contentHeight = [self fetchContentHeightWithActivityInfo:activityInfo];
-    float activityViewHeight = (contentHeight == 0) ? 173 : 173 + contentHeight + 5;
-    return activityViewHeight;//上一个与下一个之间需要间隙
+    float activityViewHeight = (contentHeight == 0) ? ACTIVITY_HEIGHT : ACTIVITY_HEIGHT + contentHeight + 5;
+    return activityViewHeight;
 }
 -(float)fetchContentHeightWithActivityInfo:(NSDictionary *)activityInfo
 {
@@ -130,7 +133,7 @@
     
     if (content.length > 0)
     {
-        CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
+        CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:CONTENT_FONT withLineSpacing:0];
         contentHeight = size.height+5;
     }
     return contentHeight;
@@ -140,17 +143,17 @@
     if (!isShow)
     {
         _showAll = NO;
-        NSInteger subviewNum = [[self.contentView subviews] count];
-        if (subviewNum > 6) {
-            for (id v in [self.contentView subviews]) {
-                if ([v isKindOfClass:[ActivityView class]]) {
-                    if (v != self.activityView)
-                    {
-                        [v removeFromSuperview];
-                    }
-                }
-            }
-        }
+//        NSInteger subviewNum = [[self.contentView subviews] count];
+//        if (subviewNum > 7) {
+//            for (id v in [self.contentView subviews]) {
+//                if ([v isKindOfClass:[ActivityView class]]) {
+//                    if (v != self.activityView)
+//                    {
+//                        [v removeFromSuperview];
+//                    }
+//                }
+//            }
+//        }
 
         [self fillTalentCell:activities];
     }
@@ -162,53 +165,27 @@
                     [v removeFromSuperview];
             }
         }
+        activityHeightBeforeThis = 0.0;
         for (int i = 0; i < [activities count]; i++)
         {
             [self fillTalentCell:activities withIndex:i];
-
         }
     }
 }
-/*
--(void)addActivityViews:(NSArray *)activities withIndex:(NSInteger)index
-{
-    NSDictionary *activityInfo = activities[index];
-
-    float lastActivityHeight = 0;
-    if (index != 0)
-    {
-        NSDictionary *lastActivityInfo = activities[index];
-        NSString *lastContent = lastActivityInfo[@"content"];
-          float lastContentHeight = 0;
-        if (lastContent.length > 0) {
-            CGSize lastSize = [lastContent boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
-            lastContentHeight = lastSize.height;
-        }
-        
-        lastActivityHeight= lastContentHeight == 0 ? 173:173+lastContentHeight+5;
-    }
-    NSString *content = activityInfo[@"content"];
-    
-    float contentHeight = 0;
-    if (content.length > 0)
-    {
-        CGSize size = [content boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
-        contentHeight = size.height == 0 ? 173:173+size.height;
-    }
-
-    ActivityView *activityView= [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+lastActivityHeight, 250, contentHeight)];
-    [self.contentView addSubview:activityView];
-    [activityView fillActivitiesWithInfo:activityInfo withContentHeight:contentHeight];
-
-}
-
-*/
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     
-    float hiddenActivityBarHeight = self.activitiesNum>1 ?40:0;
-    self.hiddenActivity.frame = CGRectMake(55, self.frame.size.height-3-10-40, 250, hiddenActivityBarHeight);
+    float hiddenActivityBarHeight = 0;
+    if (self.activitiesNum>1) {
+        hiddenActivityBarHeight=35;
+         [self.hiddenActivity setTitleColor:RGB(164, 164, 164) forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.hiddenActivity setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+    }
+    self.hiddenActivity.frame = CGRectMake(55, self.frame.size.height-3-10-hiddenActivityBarHeight, 250, hiddenActivityBarHeight);
     NSString *title = self.showAll ? @"收起":[NSString stringWithFormat:@"%d条隐藏动态",self.activitiesNum];
     NSString *imageName = self.showAll ? @"feed_cell_fold_icon.png":@"feed_cell_expand_icon.png";
     [self.hiddenActivity setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];

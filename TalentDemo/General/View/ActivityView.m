@@ -10,6 +10,7 @@
 #import "CoverView.h"
 #import "Extend.h"
 #import "UtilsMacro.h"
+#import "AppMacro.h"
 @implementation ActivityView
 
 - (id)initWithFrame:(CGRect)frame
@@ -29,7 +30,7 @@
         _content = [[UILabel alloc] initWithFrame:CGRectZero];
         _content.backgroundColor = [UIColor clearColor];
         _content.textColor = RGB(76, 76, 76);
-        _content.font = [UIFont systemFontOfSize:14];
+        _content.font = CONTENT_FONT;
         _content.lineBreakMode = NSLineBreakByWordWrapping;
         _content.numberOfLines = 0;
         [self addSubview:_content];
@@ -39,7 +40,7 @@
         {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectZero;
-            [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+            [button.titleLabel setFont:TIME_FONT];
             switch (i) {
                 case 0:
                 {
@@ -79,9 +80,9 @@
     [_coverView fillImageWithUrl:url];
     
     _content.frame = CGRectMake(10, 140, 230, contentHeight);
-    _content.attributedText = [content attributedStringFromStingWithFont:[UIFont systemFontOfSize:14] withLineSpacing:0];
-    
-    float buttonY = _content.frame.size.height + _content.frame.origin.y+5;
+    _content.attributedText = [content attributedStringFromStingWithFont:CONTENT_FONT withLineSpacing:0];
+    float flex = _content.frame.size.height == 0 ? 0:5;//若无文本，则按钮不需要与文本的间距
+    float buttonY = _content.frame.size.height + _content.frame.origin.y+flex;
     
     self.time.frame =  CGRectMake(0, buttonY, 90, 24);
     [self.time setTitle:time forState:UIControlStateNormal];
