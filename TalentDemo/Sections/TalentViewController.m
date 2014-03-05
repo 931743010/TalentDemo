@@ -19,6 +19,7 @@
     NSArray *_info;
     
     BOOL isViewDidAppear;//视图出现则table已经构造好了
+    NSMutableDictionary *_showAllDic;
 }
 @end
 
@@ -1075,7 +1076,11 @@
                            }
     ];
     }
-    
+    _showAllDic = [[NSMutableDictionary alloc] init];
+    for (int i=0; i<[_info count]; i++)
+    {
+        [_showAllDic setObject:@NO forKey:[@(i) stringValue]];
+    }
     _names = [[NSArray alloc] initWithObjects:@"Jhon",@"Lily",@"Jason",@"Dom",@"Tom", nil];
     
     _tripNames = [[NSArray alloc] initWithObjects:@"", @"",@"",@"",@"",@"",nil];
@@ -1093,7 +1098,7 @@
 #pragma mark ActivityDelegate
 -(void)showAll:(NSInteger)row
 {
-
+[_showAllDic setObject:@YES forKey:[@(row) stringValue]];
     [_talentTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     [_talentTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
@@ -1112,11 +1117,11 @@
     NSDictionary *activityInfo ;
     NSInteger endCondition = 1;
      ;
-//    if (isViewDidAppear)
-//    {
-//      TalentCell *cell  = (TalentCell *)[tableView cellForRowAtIndexPath:indexPath];
-//        endCondition = cell.showAll ? [tripInfo[@"activities"] count]:1;
-//    }
+    //if (isViewDidAppear)
+    //{
+    BOOL isShowAll = [[_showAllDic objectForKey:[@(row) stringValue]] boolValue];
+        endCondition = isShowAll ? [tripInfo[@"activities"] count]:1;
+    //}
 
     float contentHeight = 0;
     for (int i =0 ; i < endCondition; i++)
@@ -1131,15 +1136,18 @@
             contentHeight = size.height+5;
         }
         activityViewHeight += ((contentHeight == 0) ? 173 : 173 + contentHeight + 5);//动态的高
-
     }
-    
+
     NSInteger activitiesNum = [tripInfo[@"activitiesNum"] integerValue] ;
     hiddenBarHeight = activitiesNum > 1 ? 40:0;
     
     //名字+动态+影藏条 + 底部预留间隔
 
     float cellHeight = activityViewHeight + 35+ hiddenBarHeight+10;
+    if (isShowAll)
+    {
+        cellHeight = cellHeight+10*(endCondition - 1);
+    }
     return cellHeight;
 }
 
@@ -1157,36 +1165,42 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    TalentCell *cell = (TalentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[TalentCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                      reuseIdentifier:CellIdentifier] ;
-        
-    }
     NSInteger row =     [indexPath row];
-
-
+    BOOL showAll = [_showAllDic[[@(row)stringValue]] boolValue];
+    
+    static NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifierX = [NSString stringWithFormat:@"Cell%d",row];
+    
+    TalentCell *cell;
+    if (showAll) {
+        cell = (TalentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifierX];
+        if (cell == nil)
+        {
+            cell = [[TalentCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                     reuseIdentifier:CellIdentifierX] ;
+        }
+    }
+    else
+    {
+        cell = (TalentCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[TalentCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                     reuseIdentifier:CellIdentifier] ;
+        }
+    }
+    
     cell.tag = row;
     cell.activityDelegate = self;
     NSDictionary *tripInfo = [_info objectAtIndex:row];
     
     cell.name.text = tripInfo[@"name"];
     cell.tripName.text = @"在 旅程 中拍摄了照片";
-//<<<<<<< HEAD
-//    cell.avatar.image = [UIImage imageNamed:@"avatar_placeholder.png"];
-//    
-//    [cell addActivityViews:tripInfo[@"activities"] showAll:NO];
-//    
-//    [cell.hiddenActivity setTitle:@"9条隐藏动态" forState:UIControlStateNormal];
-//=======
     cell.avatar.image = [UIImage imageNamed:@"avatar_placeholder.png"];
     cell.activitiesNum = [tripInfo[@"activitiesNum"] integerValue];
     
-    [cell fillActivityViews:[tripInfo objectForKey:@"activities"] showAll:cell.showAll];
-//>>>>>>> fe7e98e3820968a4137bcf8f0f3ad2f3292ce3d4
+    [cell fillActivityViews:[tripInfo objectForKey:@"activities"] showAll:showAll];
+    
     return cell;
 }
 

@@ -26,6 +26,7 @@
 @property (nonatomic,strong) UIView *shadowBar;//底部阴影
 @property (nonatomic) BOOL showAll;
 @property (nonatomic) NSInteger activitiesNum;
+@property (nonatomic)float activitiesHeight;
 
 //<<<<<<< HEAD
 //-(void)fillActivityViews:(NSArray *)activities;
