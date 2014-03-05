@@ -10,43 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415617488.632551"
+            timestampString = "415676908.724417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-addActivityViews:withIndex:"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-fillTalentCell:withIndex:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TalentCell addActivityViews:withIndex:]"
-                  moduleName = "TalentDemo"
-                  urlString = "file:///Users/shenjx/Desktop/flowyears.com/TalentDemo/TalentDemo/Sections/TalentCell.m"
-                  timestampString = "415617533.492403"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TalentCell addActivityViews:withIndex:]"
-                  moduleName = "TalentDemo"
-                  urlString = "file:///Users/shenjx/Desktop/flowyears.com/TalentDemo/TalentDemo/Sections/TalentCell.m"
-                  timestampString = "415617533.492915"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "246">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -1112,11 +1112,11 @@
     NSDictionary *activityInfo ;
     NSInteger endCondition = 1;
      ;
-    if (isViewDidAppear)
-    {
-      TalentCell *cell  = (TalentCell *)[tableView cellForRowAtIndexPath:indexPath];
-        endCondition = cell.showAll ? [tripInfo[@"activities"] count]:1;
-    }
+//    if (isViewDidAppear)
+//    {
+//      TalentCell *cell  = (TalentCell *)[tableView cellForRowAtIndexPath:indexPath];
+//        endCondition = cell.showAll ? [tripInfo[@"activities"] count]:1;
+//    }
 
     float contentHeight = 0;
     for (int i =0 ; i < endCondition; i++)
@@ -1182,7 +1182,7 @@
 //    
 //    [cell.hiddenActivity setTitle:@"9条隐藏动态" forState:UIControlStateNormal];
 //=======
-    cell.avatar.image = [UIImage imageNamed:@"avatar.png"];
+    cell.avatar.image = [UIImage imageNamed:@"avatar_placeholder.png"];
     cell.activitiesNum = [tripInfo[@"activitiesNum"] integerValue];
     
     [cell fillActivityViews:[tripInfo objectForKey:@"activities"] showAll:cell.showAll];

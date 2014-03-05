@@ -23,6 +23,7 @@
 @property (nonatomic,strong) ActivityView *activityView;//动态
 
 @property (nonatomic,strong) UIButton *hiddenActivity;//隐藏动态
+@property (nonatomic,strong) UIView *shadowBar;//底部阴影
 @property (nonatomic) BOOL showAll;
 @property (nonatomic) NSInteger activitiesNum;
 
