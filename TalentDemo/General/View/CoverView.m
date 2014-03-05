@@ -47,10 +47,7 @@
 //         ];
 //=======
         
-        _progressHUD = [[MBProgressHUD alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-        _progressHUD.center = self.center;
-        _progressHUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
-        [_coverImage addSubview:_progressHUD];
+        
 //>>>>>>> fe7e98e3820968a4137bcf8f0f3ad2f3292ce3d4
     }
     return self;
@@ -58,17 +55,35 @@
 -(void)fillImageWithUrl:(NSString *)url
 {
     __weak typeof(self) weakSelf = self;
+  // __block MBProgressHUD *progressHUD;
+    __block UIActivityIndicatorView *activityIndicator;
+
     [_coverImage setImageWithURL:[NSURL URLWithString:url]
                 placeholderImage:nil
                          options:SDWebImageProgressiveDownload
                         progress:^(NSUInteger receivedSize, long long expectedSize)
      {
-         weakSelf.progressHUD.progress = receivedSize/expectedSize;
-         [weakSelf.progressHUD show:YES];
+//         if (!progressHUD)
+//         {
+//             progressHUD = [[MBProgressHUD alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+//             progressHUD.center = weakSelf.center;
+//             progressHUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
+//             [weakSelf addSubview:progressHUD];
+//             [progressHUD show:YES];
+//         }
+//         progressHUD.progress = receivedSize/expectedSize;
+         if (!activityIndicator)
+         {
+             [weakSelf addSubview:activityIndicator = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+             activityIndicator.center = weakSelf.center;
+             [activityIndicator startAnimating];
+         }
      }
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType)
      {
-         [weakSelf.progressHUD hide:YES];
+         //[progressHUD hide:YES];
+         [activityIndicator removeFromSuperview];
+         activityIndicator = nil;
      }
      ];
 }

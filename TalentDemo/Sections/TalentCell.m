@@ -58,6 +58,7 @@
             }
             [self.contentView addSubview:label];
         }
+
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(55, 360, 250, 35);
@@ -67,10 +68,6 @@
         [button addTarget:self action:@selector(hiddenActivityClick) forControlEvents:UIControlEventTouchUpInside];
         self.hiddenActivity = button;
         [self.contentView addSubview:button];
-       
-        
-//        _activityView= [[ActivityView alloc] initWithFrame:CGRectZero];
-//        [self.contentView addSubview:_activityView];
         
         _shadowBar = [[UIView alloc] initWithFrame:CGRectZero];
         _shadowBar.backgroundColor = RGB(210, 210,210);
@@ -113,7 +110,6 @@
     float activityViewHeight = [self fetchActivityHeightWithActivityInfo:activityInfo];
     
     ActivityView *activityView = [[ActivityView alloc] initWithFrame:CGRectMake(55, 35+activityHeightBeforeThis, 250, activityViewHeight)];
-    
     [self.contentView addSubview:activityView];
     [activityView fillActivitiesWithInfo:activityInfo withContentHeight:contentHeight];
     activityHeightBeforeThis += activityViewHeight+10;//上一个与下一个之间需要间隙10
@@ -175,6 +171,12 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    //name 和 trip
+    CGSize size = [self.name.text boundingRectWithSize:CGSizeMake(230, MAXFLOAT) withTextFont:NAME_FONT withLineSpacing:0];
+    float nameWidth = size.width+5;
+    self.name.frame = CGRectMake(55, 15, nameWidth, 20);
+    self.tripName.frame = CGRectMake(55+nameWidth+5, 15, 250 - (55+nameWidth+5) , 20);
     
     float hiddenActivityBarHeight = 0;
     if (self.activitiesNum>1) {

@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentViewController.m"
-            timestampString = "415639702.229133"
+            timestampString = "415726129.618621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1102"
-            endingLineNumber = "1102"
-            landmarkName = "-hiddenOthers"
+            startingLineNumber = "1179"
+            endingLineNumber = "1179"
+            landmarkName = "-showAll:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentCell.m"
-            timestampString = "415637574.853831"
+            timestampString = "415724760.048588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-fillActivityViews:showAll:"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-fillTalentCell:withIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TalentDemo/Sections/TalentViewController.m"
-            timestampString = "415639702.229133"
+            timestampString = "415726129.618621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1115"
-            endingLineNumber = "1115"
+            startingLineNumber = "1192"
+            endingLineNumber = "1192"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>

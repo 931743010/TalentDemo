@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TalentViewController.h"
+#import "UtilsMacro.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -16,50 +17,34 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
+    [self appearanceCustomization];
     TalentViewController *talentVC = [[TalentViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:talentVC];
     self.window.rootViewController = nav;
     return YES;
 }
-/*
+
 #pragma mark -
 #pragma mark UI设置
 -(void)appearanceCustomization
 {
     id appearance;
-    NSDictionary *dic = nil;
-    UIControlState stateNormal = UIControlStateNormal;
-    UIControlState stateSelected = UIControlStateSelected;
-    //UIStatusBar
-    
     //UINavigationBar
     appearance = [UINavigationBar appearance];
     {
-        //导航条ios6 需要高44的背景图，iOS 7 需要高为 64的背景图
-        UIImage *img = [[UIImage imageNamed:@"bgNavBar.png"] stretchableImageWithLeftCapWidth:1 topCapHeight:1];
-        [appearance setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
-        //        [appearance setBackgroundColor:ColorWithRGB(238, 77, 77)];
-        [appearance setTintColor:[UIColor whiteColor]];
+
         if (systemNewerThan7){
-            [appearance setBarTintColor:ColorWithRGB(238, 77, 77)];
+            [appearance setBarTintColor:RGB(64, 177, 194)];
+        }
+        else
+        {
+            UIImage *img = [[UIImage imageNamed:@"navbarback.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) ];
+            [appearance setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
         }
         
-        dic = @{UITextAttributeTextColor: [UIColor whiteColor]};
-        
-        [appearance setTitleTextAttributes:dic];
-        
-        //        NSShadow *shadow = [[NSShadow alloc] init];
-        //        shadow.shadowColor = [UIColor clearColor];
-        dic = @{
-                UITextAttributeTextColor: [UIColor whiteColor]
-                ,UITextAttributeTextShadowColor: [UIColor clearColor]
-                ,UITextAttributeFont:[self SDFontWithFamilyName:_HeadlineFontNameNormal_ size:16.0f]
-                };
-        //        [shadow release];
-        [appearance setTitleTextAttributes:dic];
+
     }
-    
+    /*
     //UIToolbar
     appearance = [UIToolbar appearance];
     {
@@ -210,8 +195,8 @@
                          barMetrics:UIBarMetricsDefault];
         
     }
-    
-}*/
+   */
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

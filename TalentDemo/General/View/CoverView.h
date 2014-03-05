@@ -19,7 +19,6 @@
 //=======
 
 @property(nonatomic,strong)UIImageView *coverImage;
-@property(nonatomic,strong)MBProgressHUD *progressHUD;
 
 -(void)fillImageWithUrl:(NSString *)url;
 //>>>>>>> fe7e98e3820968a4137bcf8f0f3ad2f3292ce3d4

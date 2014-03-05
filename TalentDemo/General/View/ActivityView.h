@@ -15,6 +15,7 @@
 
 @property(nonatomic,strong)UIButton *time;//时间
 @property(nonatomic,strong)UIButton *location;//地理位置
-
+@property (nonatomic,strong)UIButton *likeBtn;
+@property (nonatomic,strong)UIButton *commentBtn;
 -(void)fillActivitiesWithInfo:(NSDictionary *)activityInfo withContentHeight:(NSInteger)contentHeight;
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E6CAFC651BF409890D22A10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC98C568043A4C588732F931 /* libPods.a */; };
+		A2354C4B18C7788100AAF5CE /* navbarback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2354C4A18C7788100AAF5CE /* navbarback@2x.png */; };
 		A2422F8518C4AF5D00E70FD8 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = A2422F7F18C4AF5D00E70FD8 /* NSString+Extend.m */; };
 		A2422F8618C4AF5D00E70FD8 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2422F8218C4AF5D00E70FD8 /* ActivityView.m */; };
 		A2422F8718C4AF5D00E70FD8 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2422F8418C4AF5D00E70FD8 /* CoverView.m */; };
@@ -98,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		119D20C977484B7BB89D37B2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A2354C4A18C7788100AAF5CE /* navbarback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbarback@2x.png"; sourceTree = "<group>"; };
 		A2422F7E18C4AF5D00E70FD8 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
 		A2422F7F18C4AF5D00E70FD8 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		A2422F8118C4AF5D00E70FD8 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		A2422F8918C4C16200E70FD8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A2354C4A18C7788100AAF5CE /* navbarback@2x.png */,
 				DA7CC5F118C5CA4D006115F6 /* avatar_placeholder.png */,
 				DA7CC5F218C5CA4D006115F6 /* avatar_placeholder@2x.png */,
 				DA7CC5F318C5CA4D006115F6 /* barshadow.png */,
@@ -512,6 +515,7 @@
 				DA7CC64418C5CA4D006115F6 /* float_like_highlight@2x.png in Resources */,
 				A2422F8B18C4C16200E70FD8 /* avatar@2x.png in Resources */,
 				DA7CC64918C5CA4D006115F6 /* gallery_like_hl@2x.png in Resources */,
+				A2354C4B18C7788100AAF5CE /* navbarback@2x.png in Resources */,
 				DA7CC62C18C5CA4D006115F6 /* avatar_placeholder@2x.png in Resources */,
 				DA7CC64118C5CA4D006115F6 /* float_comments.png in Resources */,
 				DA7CC63718C5CA4D006115F6 /* destination_cell_shadow.png in Resources */,
@@ -670,7 +674,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -710,7 +714,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -734,11 +738,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Yin (HQR2DVSWCS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TalentDemo/TalentDemo-Prefix.pch";
 				INFOPLIST_FILE = "TalentDemo/TalentDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "95B210F1-5204-4598-BBF8-89BA2B43A22A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -750,11 +757,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Yin (HQR2DVSWCS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TalentDemo/TalentDemo-Prefix.pch";
 				INFOPLIST_FILE = "TalentDemo/TalentDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "95B210F1-5204-4598-BBF8-89BA2B43A22A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
