@@ -45,7 +45,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tips" message:@"这里名字，旅程，时间，地理位置,头像是不变的（风景是动态的，所以这里头像写死了）.每条动态都是不同的，拥有不同的id.1,2,5,7,9行是折叠的，可以展开并拢。\n谢谢!"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tips" message:@"这里名字，旅程，时间，地理位置,头像是不变的（风景是动态的，所以这里头像写死了）.每条动态都是不同的，拥有不同的id.ds1,2,5,7,9行是折叠的，可以展开并拢。\n谢谢!"  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }
 - (void)viewDidLoad
